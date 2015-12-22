@@ -22,6 +22,15 @@ namespace LeetCode
             return SearchInternal(nums, target, 0, nums.Length-1);
         }
 
+        /// <summary>
+        /// The key is to find "normal" sorted part first, which could be decided determinstically
+        /// if the target is in this section or not
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <param name="begin"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
         private int SearchInternal(int[] nums, int target, int begin, int end)
         {
             if (begin > end) return -1;
